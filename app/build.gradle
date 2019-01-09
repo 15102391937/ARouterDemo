@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+//秘钥的账号密码信息
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+android {
+    compileSdkVersion 28
+
+    //签名配置（要写在buildTypes前面）
+    signingConfigs {
+        //公用的key
+        allSign {
+            //store签名文件
+            storeFile file(keystoreProperties['allSignstoreFile'])
+            //store签名密码
+            storePassword keystoreProperties['allSignstorePassword']
+            //签名使用key的别名
+            keyAlias keystoreProperties['allSignkeyAlias']
+            //签名使用的key的密码
+            keyPassword keystoreProperties['allSignkeyPassword']
+        }
+    }
+
+    //构建类型配置
+    buildTypes {
+        release {
+            //是否混淆
+            minifyEnabled true
+            //是否去除未利用的资源，默认false，表示不去除
+            shrinkResources true
+            //Zipalign优化
+            zipAlignEnabled true
+            //混淆文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.allSign
+        }
+        debug {
+            // 在 flavor 里指定 signingConfig 可以指定 release 包的签名配置，但对 debug 包无效,解决办法：指定 debug 使用release的签名
+            signingConfig release.signingConfig
+        }
+    }
+
+    defaultConfig {
+        applicationId "cgy.com.arouterdemo"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //友盟配置
+        buildConfigField 'String', 'UMENGAPP_KEY    ', '"5c355792b465f5a6f3001362"'
+        buildConfigField 'String', 'UMENGAPP_CHANNEL', '"arouterdemo_default"'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:28.+'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    //友盟
+    implementation 'com.umeng.umsdk:common:1.5.4'
+    implementation 'com.umeng.umsdk:analytics:7.5.4'
+}
