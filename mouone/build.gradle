@@ -5,9 +5,21 @@ if (isModule.toBoolean()) {
 }
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
+
+    //通过注解支持kotlin数据类序列化
+    androidExtensions {
+        experimental = true
+    }
 
     sourceSets {
         main {
@@ -35,4 +47,5 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':common')
+    kapt "com.alibaba:arouter-compiler:$arouterCompilerVersion"
 }

@@ -4,6 +4,12 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
+
+    //通过注解支持kotlin数据类序列化
+    androidExtensions {
+        experimental = true
+    }
+
     defaultConfig {
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion

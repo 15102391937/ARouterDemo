@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 //秘钥的账号密码信息
 def keystorePropertiesFile = rootProject.file("keystore.properties")
@@ -9,6 +10,11 @@ keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
+
+    //通过注解支持kotlin数据类序列化
+    androidExtensions {
+        experimental = true
+    }
 
     //签名配置（要写在buildTypes前面）
     signingConfigs {

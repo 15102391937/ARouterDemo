@@ -1,9 +1,15 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
+
+    //通过注解支持kotlin数据类序列化
+    androidExtensions {
+        experimental = true
+    }
 
     defaultConfig {
         minSdkVersion rootProject.minSdkVersion
@@ -19,7 +25,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+}
 
+//依赖冲突解决，强制jar包版本
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion "$supportVersion"
+            }
+        }
+    }
 }
 
 dependencies {
@@ -33,4 +50,6 @@ dependencies {
     //友盟
     api "com.umeng.umsdk:common:$yMengVersion"
     api "com.umeng.umsdk:analytics:$yMengAnalVersion"
+    //ARouter
+    api "com.alibaba:arouter-api:$arouterApiVersion"
 }
