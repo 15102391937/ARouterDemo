@@ -1,16 +1,16 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
+    ext{
+        kotlinVersion = '1.2.51'
+        gradleVersion = '3.1.4'
+    }
     repositories {
         google()
         jcenter()
         maven { url 'https://dl.bintray.com/umsdk/release' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.4'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.51"
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath "com.android.tools.build:gradle:$gradleVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     }
 }
 
@@ -30,11 +30,16 @@ task clean(type: Delete) {
 ext {
     // Sdk and tools
     buildToolsVersion = 28
-    compileSdkVersion = 25
+    compileSdkVersion = 28
+    targetSdkVersion = 28
     minSdkVersion = 19
-    targetSdkVersion = 25
-    kotlinVersion = '1.2.51'
     //dependencies version
     yMengVersion = "1.5.4"
     yMengAnalVersion = "7.5.4"
+
+    supportVersion = "28.0.0"
+    constraintLayoutVersion = "1.1.3"
+    junitVersion = "4.12"
+    testRunnerVersion = "1.0.2"
+    espressoVersion = "3.0.2"
 }

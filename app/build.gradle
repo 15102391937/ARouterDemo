@@ -8,7 +8,7 @@ def keystoreProperties = new Properties()
 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion rootProject.compileSdkVersion
 
     //签名配置（要写在buildTypes前面）
     signingConfigs {
@@ -46,8 +46,8 @@ android {
 
     defaultConfig {
         applicationId "cgy.com.arouterdemo"
-        minSdkVersion 19
-        targetSdkVersion 28
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -59,13 +59,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
-    implementation 'com.android.support:appcompat-v7:28.+'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    //友盟
-    implementation 'com.umeng.umsdk:common:1.5.4'
-    implementation 'com.umeng.umsdk:analytics:7.5.4'
+    if (isModule.toBoolean()) {
+        implementation project(':common')
+    } else {
+        implementation project(':mouone')
+    }
 }
