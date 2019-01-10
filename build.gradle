@@ -1,7 +1,5 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 buildscript {
-    ext.kotlin_version = '1.2.51'
     repositories {
         google()
         jcenter()
@@ -9,7 +7,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.4'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.51"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -26,4 +24,17 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+//时间：2019.1.10；每次修改版本号都要添加修改时间
+ext {
+    // Sdk and tools
+    buildToolsVersion = 28
+    compileSdkVersion = 25
+    minSdkVersion = 19
+    targetSdkVersion = 25
+    kotlinVersion = '1.2.51'
+    //dependencies version
+    yMengVersion = "1.5.4"
+    yMengAnalVersion = "7.5.4"
 }
