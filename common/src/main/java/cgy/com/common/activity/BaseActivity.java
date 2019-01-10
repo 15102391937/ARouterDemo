@@ -1,8 +1,10 @@
-package cgy.com.arouterdemo;
+package cgy.com.common.activity;
 
 import android.support.v7.app.AppCompatActivity;
 
 import com.umeng.analytics.MobclickAgent;
+
+import cgy.com.common.BuildConfig;
 
 /**
  * Created by ChenGY on 2019-01-09.

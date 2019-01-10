@@ -1,6 +1,7 @@
-package cgy.com.arouterdemo
+package cgy.com.moumain
 
 import android.os.Bundle
+import cgy.com.common.activity.BaseActivity
 
 class MainActivity : BaseActivity() {
 

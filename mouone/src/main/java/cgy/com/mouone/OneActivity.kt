@@ -1,12 +1,12 @@
 package cgy.com.mouone
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import cgy.com.common.activity.BaseActivity
 
-class GirlsActivity : AppCompatActivity() {
+class OneActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_girls)
+        setContentView(R.layout.activity_one)
     }
 }

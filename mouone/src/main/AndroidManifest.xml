@@ -2,6 +2,6 @@
     package="cgy.com.mouone">
     <application android:theme="@style/AppTheme">
         <activity
-            android:name=".GirlsActivity"/>
+            android:name=".OneActivity"/>
     </application>
 </manifest>

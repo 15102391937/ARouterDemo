@@ -1,14 +1,14 @@
 package cgy.com.arouterdemo
 
-import android.app.Application
 import android.util.Log
+import cgy.com.common.app.BaseApplication
 import com.umeng.analytics.MobclickAgent
 import com.umeng.commonsdk.UMConfigure
 
 /**
  * Created by ChenGY on 2019-01-09.
  */
- class App : Application(){
+ class App : BaseApplication(){
 
     override fun onCreate() {
         super.onCreate()

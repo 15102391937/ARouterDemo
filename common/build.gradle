@@ -24,13 +24,13 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
-    implementation "com.android.support:appcompat-v7:$supportVersion"
-    implementation "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
-    testImplementation "junit:junit:$junitVersion"
-    androidTestImplementation "com.android.support.test:runner:$testRunnerVersion"
-    androidTestImplementation "com.android.support.test.espresso:espresso-core:$espressoVersion"
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    api "com.android.support:appcompat-v7:$supportVersion"
+    api "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
+    testApi"junit:junit:$junitVersion"
+    androidTestApi"com.android.support.test:runner:$testRunnerVersion"
+    androidTestApi "com.android.support.test.espresso:espresso-core:$espressoVersion"
     //友盟
-    implementation "com.umeng.umsdk:common:$yMengVersion"
-    implementation "com.umeng.umsdk:analytics:$yMengAnalVersion"
+    api "com.umeng.umsdk:common:$yMengVersion"
+    api "com.umeng.umsdk:analytics:$yMengAnalVersion"
 }

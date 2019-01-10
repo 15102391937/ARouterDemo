@@ -1,1 +1,1 @@
-include ':app', ':mouone', ':common', ':image'
+include ':app', ':mouone', ':common', ':image', ':moumain'

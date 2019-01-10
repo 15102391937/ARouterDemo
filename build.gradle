@@ -1,5 +1,5 @@
 buildscript {
-    ext{
+    ext {
         kotlinVersion = '1.2.51'
         gradleVersion = '3.1.4'
     }
