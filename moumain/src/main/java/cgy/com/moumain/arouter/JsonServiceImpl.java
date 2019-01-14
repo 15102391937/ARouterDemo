@@ -1,6 +1,7 @@
-package cgy.com.mouone;
+package cgy.com.moumain.arouter;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.facade.service.SerializationService;
@@ -8,20 +9,14 @@ import com.google.gson.Gson;
 
 import java.lang.reflect.Type;
 
-/**
- * Used for json converter
- *
- * @author zhilong <a href="mailto:zhilong.lzl@alibaba-inc.com">Contact me.</a>
- * @version 1.0
- * @since 2017/4/10 下午2:10
- */
-@Route(path = "/one/json")
+@Route(path = "/main/json")
 public class JsonServiceImpl implements SerializationService {
 
     private Gson mGson;
 
     @Override
     public void init(Context context) {
+        Log.e("tag", "位于 main 中的json初始化了");
         mGson = new Gson();
     }
 
@@ -43,7 +38,7 @@ public class JsonServiceImpl implements SerializationService {
         return mGson.fromJson(input, clazz);
     }
 
-    public void checkJson() {
+    private void checkJson() {
         if (mGson == null) {
             mGson = new Gson();
         }

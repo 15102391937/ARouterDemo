@@ -1,6 +1,7 @@
-package cgy.com.arouterdemo
+package cgy.com.arouterdemo.app
 
 import android.util.Log
+import cgy.com.arouterdemo.BuildConfig
 import cgy.com.common.app.BaseApplication
 import com.alibaba.android.arouter.launcher.ARouter
 import com.umeng.analytics.MobclickAgent

@@ -7,7 +7,7 @@
     android:background="@color/green_63"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".activity.OneActivity">
+    tools:context=".activity.MainUrlActivity">
 
     <TextView
         style="@style/wrap_pad10"
@@ -15,20 +15,7 @@
         android:text="I am one/one" />
 
     <TextView
-        android:id="@+id/tv_show"
-        style="@style/wrap_pad10"
+        android:id="@+id/tv_url"
+        style="@style/wrap_select_pad10"
         android:layout_marginTop="40dp" />
-
-    <TextView
-        android:id="@+id/tv_one"
-        style="@style/wrap_select_pad10"
-        android:layout_marginTop="40dp"
-        android:text="go one/webview" />
-
-    <TextView
-        android:id="@+id/tv_one2"
-        style="@style/wrap_select_pad10"
-        android:layout_marginTop="40dp"
-        android:text="go main/mainObj" />
 </LinearLayout>
-

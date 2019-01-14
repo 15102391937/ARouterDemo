@@ -3,14 +3,14 @@ package cgy.com.common.bean;
 /**
  * Created by ChenGY on 2019-01-11.
  */
-public class OneBean {
+public class CommonBean {
     public String name;
-    public String id;
+    public int id;
 
-    public OneBean() {
+    public CommonBean() {
     }
 
-    public OneBean(String name, String id) {
+    public CommonBean(String name, int id) {
         this.name = name;
         this.id = id;
     }

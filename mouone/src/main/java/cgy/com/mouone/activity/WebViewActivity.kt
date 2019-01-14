@@ -1,7 +1,8 @@
-package cgy.com.mouone
+package cgy.com.mouone.activity
 
 import android.os.Bundle
 import cgy.com.common.activity.BaseActivity
+import cgy.com.mouone.R
 import com.alibaba.android.arouter.facade.annotation.Route
 import kotlinx.android.synthetic.main.activity_webview.*
 

@@ -1,8 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cgy.com.mouone">
+
     <application android:theme="@style/AppTheme">
-        <activity android:name=".OneActivity" />
-        <activity android:name=".OneUrlActivity" />
-        <activity android:name=".WebViewActivity" />
+        <activity android:name=".activity.OneActivity" />
+        <activity android:name=".activity.WebViewActivity" />
     </application>
+
 </manifest>

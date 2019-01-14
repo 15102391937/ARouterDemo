@@ -8,6 +8,7 @@
         android:label="@string/one_app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name="debug.OneApplication"
         android:theme="@style/AppTheme">
         <activity android:name="debug.LauncherActivity">
             <intent-filter>
@@ -16,8 +17,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".OneActivity" />
-        <activity android:name=".OneUrlActivity" />
-        <activity android:name=".WebViewActivity" />
+        <activity android:name=".activity.OneActivity" />
+        <activity android:name=".activity.WebViewActivity" />
     </application>
+
 </manifest>

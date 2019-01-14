@@ -1,8 +1,9 @@
-package cgy.com.moumain
+package cgy.com.moumain.activity
 
 import android.os.Bundle
 import cgy.com.common.activity.BaseActivity
-import cgy.com.common.bean.OneBean
+import cgy.com.common.bean.CommonBean
+import cgy.com.moumain.R
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import kotlinx.android.synthetic.main.activity_main.*
@@ -15,6 +16,7 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.activity_main)
         tv_main.setOnClickListener {
             ARouter.getInstance().build("/one/one")
+                    .withObject("obj", CommonBean("main", 1))
                     .navigation()
         }
     }
