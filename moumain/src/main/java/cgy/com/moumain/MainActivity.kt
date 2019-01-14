@@ -13,10 +13,8 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        tv_main.setOnClickListener{
+        tv_main.setOnClickListener {
             ARouter.getInstance().build("/one/one")
-                    .withString("key1", "main")
-//                    .withObject("key2", OneBean("main", 4))
                     .navigation()
         }
     }

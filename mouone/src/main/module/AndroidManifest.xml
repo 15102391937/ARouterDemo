@@ -17,5 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".OneActivity" />
+        <activity android:name=".OneUrlActivity" />
+        <activity android:name=".WebViewActivity" />
     </application>
 </manifest>

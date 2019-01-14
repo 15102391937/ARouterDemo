@@ -52,4 +52,8 @@ dependencies {
     api "com.umeng.umsdk:analytics:$yMengAnalVersion"
     //ARouter
     api "com.alibaba:arouter-api:$arouterApiVersion"
+    //Gson
+    api "com.google.code.gson:gson:$gsonVersion"
+
+
 }

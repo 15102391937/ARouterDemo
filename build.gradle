@@ -44,5 +44,6 @@ ext {
     yMengAnalVersion = "7.5.4"
     arouterApiVersion = "1.4.1"
     arouterCompilerVersion = "1.2.2"
+    gsonVersion = "2.8.5"
 
 }
