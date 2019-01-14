@@ -2,18 +2,16 @@ package cgy.com.moumain.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import cgy.com.common.activity.BaseActivity
+import cgy.com.common.arouter.ARouterConstants
 import cgy.com.common.bean.CommonBean
 import cgy.com.moumain.R
-import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.alibaba.android.arouter.facade.callback.NavigationCallback
 import com.alibaba.android.arouter.launcher.ARouter
 import kotlinx.android.synthetic.main.activity_main.*
 
-@Route(path = "/main/main")
+@Route(path = "/main/main", extras = ARouterConstants.EXTRA_NEED_LOGIN)
 class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

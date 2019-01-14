@@ -27,13 +27,13 @@ class OneActivity : BaseActivity() {
         tv_show.text = "$obj"
 
         tv_one.setOnClickListener {
-            ARouter.getInstance().build("/one/webview2")
+            ARouter.getInstance().build("/one/webview")
                     .withString("url", "file:///android_asset/schame-test.html")
                     .navigation()
         }
 
         tv_one2.setOnClickListener {
-            ARouter.getInstance().build("/main/obj2")
+            ARouter.getInstance().build("/main/obj")
                     .withObject("obj", CommonBean("main", 1))
                     .navigation(this, object : NavigationCallback {
                         override fun onLost(postcard: Postcard?) {
@@ -62,3 +62,4 @@ class OneActivity : BaseActivity() {
         }
     }
 }
+
