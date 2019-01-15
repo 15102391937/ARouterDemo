@@ -19,5 +19,11 @@
         style="@style/wrap_select_pad10"
         android:layout_marginTop="40dp"
         android:text="go one/one" />
+
+    <TextView
+        android:id="@+id/tv_main2"
+        style="@style/wrap_select_pad10"
+        android:layout_marginTop="40dp"
+        android:text="hello service" />
 </LinearLayout>
 

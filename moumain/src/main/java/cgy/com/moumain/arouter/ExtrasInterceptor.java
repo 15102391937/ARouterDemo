@@ -19,22 +19,22 @@ public class ExtrasInterceptor implements IInterceptor {
             switch (postcard.getExtra()) {
                 case ARouterConstants.EXTRA_NEED_LOGIN:
                     callback.onInterrupt(new RuntimeException("EXTRA_NEED_LOGIN"));  // 觉得有问题，中断路由流程
-                    Log.e("tag", "ExtrasInterceptor interrupt");
+                    Log.e("ARouter", "ExtrasInterceptor interrupt");
                     break;
                 default:
                     callback.onContinue(postcard);  // 处理完成，交还控制权
-                    Log.e("tag", "ExtrasInterceptor pass");
+                    Log.e("ARouter", "ExtrasInterceptor pass");
                     break;
             }
         } else {
             callback.onContinue(postcard);  // 处理完成，交还控制权
-            Log.e("tag", "process: 1 pass");
+            Log.e("ARouter", "process: 1 pass");
         }
     }
 
     @Override
     public void init(Context context) {
         // 拦截器的初始化，会在sdk初始化的时候调用该方法，仅会调用一次
-        Log.e("tag", "位于 main 中的拦截器 extras 初始化了");
+        Log.e("ARouter", "位于 main 中的拦截器 extras 初始化了");
     }
 }

@@ -13,11 +13,11 @@ import com.alibaba.android.arouter.facade.service.DegradeService
 @Route(path = "/xxx/xxx")
 class DegradeServiceImpl : DegradeService {
     override fun onLost(context: Context?, postcard: Postcard?) {
-        Log.e("tag", "main的全局降级")
+        Log.e("ARouter", "main的全局降级")
     }
 
     override fun init(context: Context?) {
-        Log.e("tag", "位于 main 中的degrade初始化了")
+        Log.e("ARouter", "位于 main 中的degrade初始化了")
     }
 
 }

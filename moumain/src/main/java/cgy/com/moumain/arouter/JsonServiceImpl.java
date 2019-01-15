@@ -16,7 +16,7 @@ public class JsonServiceImpl implements SerializationService {
 
     @Override
     public void init(Context context) {
-        Log.e("tag", "位于 main 中的json初始化了");
+        Log.e("ARouter", "位于 main 中的json初始化了");
         mGson = new Gson();
     }
 

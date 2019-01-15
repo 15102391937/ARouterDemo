@@ -17,16 +17,16 @@ public class TestInterceptorTwo implements IInterceptor {
     public void process(Postcard postcard, InterceptorCallback callback) {
         if (StrNumUtil.has_intterupt && StrNumUtil.getRandomBoolean()) {
             callback.onInterrupt(new RuntimeException("我觉得有点异常"));  // 觉得有问题，中断路由流程
-            Log.e("tag", "process: 2 interrupt");
+            Log.e("ARouter", "process: 2 interrupt");
         } else {
             callback.onContinue(postcard);  // 处理完成，交还控制权
-            Log.e("tag", "process: 2 pass");
+            Log.e("ARouter", "process: 2 pass");
         }
     }
 
     @Override
     public void init(Context context) {
         // 拦截器的初始化，会在sdk初始化的时候调用该方法，仅会调用一次
-        Log.e("tag", "位于 main 中的拦截器2初始化了");
+        Log.e("ARouter", "位于 main 中的拦截器2初始化了");
     }
 }
