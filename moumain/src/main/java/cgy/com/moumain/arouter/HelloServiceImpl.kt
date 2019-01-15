@@ -14,7 +14,7 @@ import com.alibaba.android.arouter.facade.template.IProvider
 class HelloServiceImpl : HelloService {
     private var context: Context? = null
 
-    override fun sayHellow(name: String): String {
+    override fun sayHello(name: String): String {
         context?.let {
             Toast.makeText(context, "HelloServiceImpl:$name", Toast.LENGTH_SHORT).show()
         }
@@ -29,7 +29,7 @@ class HelloServiceImpl : HelloService {
 
 // 声明继承与OProvider的接口,其他组件通过byType或byName查找到该接口的具体实现类后，来调用具体服务
 interface HelloService : IProvider {
-    fun sayHellow(name: String): String
+    fun sayHello(name: String): String
 }
 
 

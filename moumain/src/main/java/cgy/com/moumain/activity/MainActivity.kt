@@ -33,7 +33,7 @@ class MainActivity : BaseActivity() {
         }
 
         tv_main2.setOnClickListener {
-            helloService?.let { tv_main2.text = helloService!!.sayHellow("cgy") }
+            helloService?.let { tv_main2.text = helloService!!.sayHello("cgy") }
         }
     }
 
