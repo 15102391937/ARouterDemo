@@ -29,6 +29,7 @@ class MainActivity : BaseActivity() {
         tv_main.setOnClickListener {
             ARouter.getInstance().build("/one/one")
                     .withObject("obj", CommonBean("main", 1))
+                    .withString("str", "formMainActivity")
                     .navigation(this, 11)
         }
 

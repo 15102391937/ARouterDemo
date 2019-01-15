@@ -18,13 +18,16 @@ class OneActivity : BaseActivity() {
     @Autowired
     @JvmField
     var obj: CommonBean? = null
+    @Autowired
+    @JvmField
+    var str: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_one)
         ARouter.getInstance().inject(this)
 
-        tv_show.text = "$obj"
+        tv_show.text = "$obj$str${intent.getStringExtra(ARouter.RAW_URI)}"
 
         tv_one.setOnClickListener {
             ARouter.getInstance().build("/one/webview")

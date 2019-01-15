@@ -29,6 +29,6 @@ class MainUrlActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_url)
         ARouter.getInstance().inject(this)
-        tv_url.text = "$key1-- - $key2-- - $boy-- - $obj"
+        tv_url.text = "$key1 --- $key2 --- $boy --- $obj --- ${intent.getStringExtra(ARouter.RAW_URI)}"
     }
 }
